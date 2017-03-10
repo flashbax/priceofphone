@@ -28,12 +28,15 @@ window.onload = function() {
     accessorySub =  phoneSub - accessoryCost;
     return accessorySub;    
   };  
-
+  
+  //pass in cost of phone and the current bank account value
   phoneCost(PHONE_COST, BANK_TALLY);
+
+  //pass in the cost of an accesory and the purchase of a phone
   accessoryCost(ACCESSORY_COST, phoneSub);
 
-  console.log(phoneSub);
-  console.log(accessorySub);
+  //console.log();
+  document.getElementById("bank").innerHTML = "You have " + "$" + accessorySub + " left to spend";
 
 
 }; //window load end
