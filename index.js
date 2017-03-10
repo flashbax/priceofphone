@@ -16,28 +16,32 @@ window.onload = function() {
   
   var phone = document.getElementById("phone").innerHTML = "The cost of a phone is " + "$" + PHONE_COST;
   var accessory = document.getElementById("accessory").innerHTML = "The cost of an accessory is " + "$" + ACCESSORY_COST;
+  //var purchaseAccessory = document.getElementById("buyAccessory").innerHTML = "Purchase Accessory";
 
   //calculate phone purchase against total in bank account 
   function phoneCost(phoneCost, bankTally) { 
     phoneSub = bankTally - phoneCost;
     return phoneSub;
   };   
-
-   //calculate accessory purchase against total in bank account 
-  function accessoryCost(accessoryCost, phoneSub) { 
-    accessorySub =  phoneSub - accessoryCost;
-    return accessorySub;    
-  };  
   
   //pass in cost of phone and the current bank account value
   phoneCost(PHONE_COST, BANK_TALLY);
 
   //pass in the cost of an accesory and the purchase of a phone
-  accessoryCost(ACCESSORY_COST, phoneSub);
+  document.getElementById("buyAccessory").addEventListener("click", function() {
+    console.log(ACCESSORY_COST);
+  });
 
-  //console.log();
-  document.getElementById("bank").innerHTML = "You have " + "$" + accessorySub + " left to spend";
+  //calculate accessory purchase 
+  // function accessoryCost(ACCESSORY_COST) { 
+  //   for (i=0; i < ACCESSORY_COST; i++) { 
+  //     return ACCESSORY_COST
+  //   } 
+  // }; 
+  
 
+  //document.getElementById("bank").innerHTML = "You have " + "$" + accessorySub + " left to spend";
+  
 
 }; //window load end
 
