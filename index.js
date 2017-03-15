@@ -14,31 +14,49 @@ window.onload = function() {
   const BANK_TALLY = 200.00; 
   const TAX_RATE = 0.13;
  
-  
   var phone = document.getElementById("phone").innerHTML = "The cost of a phone is " + "$" + PHONE_COST;
   var accessory = document.getElementById("accessory").innerHTML = "The cost of an accessory is " + "$" + ACCESSORY_COST;
-  //var purchaseAccessory = document.getElementById("buyAccessory").innerHTML = "Purchase Accessory";
+  var phoneCost = PHONE_COST;
+  var accessoryCost = ACCESSORY_COST;
+  var bankTally = BANK_TALLY;
 
-   //pass in the cost of an accesory and the purchase of a phone
- //document.getElementById("buyAccessory").addEventListener("click", 
- 
- function accessoryPurchase(){ 
-
-      //console.log("hello");
-  var buyAccessory = ACCESSORY_COST;
-  //var addAccessory = buyAccessory;
-  var buy = buyAccessory++;
-  console.log(buy);
-  //for (i=buyAccessory; i < buyAccessory+10; i++) {
-  //      console.log(i);
- // }
-
+  
+  function phonePurchase() { 
+    phoneCost+=50;
   };
   
+ function accessoryPurchase(){
+    accessoryCost+=10;
+  };
+
+
+
 //document.getElementById("bank").innerHTML = "You have " + "$" + accessorySub + " left to spend";
-document.getElementById("buyAccessory").onclick = function() { accessoryPurchase() };
+document.getElementById("buyPhone").onclick = function() { 
+  phonePurchase(); 
+  document.getElementById("phonePurchase").innerHTML = "You've spent " + "$" + phoneCost.toFixed(2) + " on phones.";
+  return; 
+};
+
+document.getElementById("buyAccessory").onclick = function() {
+ accessoryPurchase();
+ document.getElementById("accessoryPurchase").innerHTML = "You've spent " + "$" + accessoryCost.toFixed(2) + " on accessories"; 
+ return;
+};
+
+console.log();
 
 }; //window load end
 
 
-    
+//  if (phoneCost <= bankTally) {
+//       document.getElementById("phonePurchase").innerHTML = "You've spent " + "$" + phoneCost.toFixed(2) + " on phones."; 
+//     } else { 
+//       console.log("You need more money!");
+//     }
+
+// if (accessoryCost <= bankTally) {
+//       document.getElementById("accessoryPurchase").innerHTML = "You've spent " + "$" + accessoryCost.toFixed(2) + " on accessories"; 
+//     } else { 
+//       console.log("You need more money!");
+//     }
