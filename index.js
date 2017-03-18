@@ -19,32 +19,36 @@ window.onload = function() {
   var phoneCost = PHONE_COST;
   var accessoryCost = ACCESSORY_COST;
   var bankTally = BANK_TALLY;
+  var taxRate = TAX_RATE;
 
   
-  function phonePurchase() { 
+  function phonePurchase() {
     phoneCost+=50;
+    document.getElementById("phonePurchase").innerHTML = "You've spent " + "$" + phoneCost.toFixed(2) + " on phones.";
+    return phoneCost;
   };
   
  function accessoryPurchase(){
     accessoryCost+=10;
+    document.getElementById("accessoryPurchase").innerHTML = "You've spent " + "$" + accessoryCost.toFixed(2) + " on accessories"; 
+    return accessoryCost;
   };
+  
+  document.getElementById("phonePurchase").onclick = function() { phonePurchase() };
+ 
+  document.getElementById("buyAccessory").onclick = function() { accessoryPurchase() };  
 
+var phonePurchaseSubTotal = phonePurchase();
+var accessoryPurchaseSubTotal = accessoryPurchase();
 
+console.log(accessoryPurchaseSubTotal);
+  
+  // function addSubTotal(){    
+  //   var subTotal = phonePurchaseSubTotal+accessoryPurchaseSubTotal;
+  //   return subTotal;
+  // };
 
-//document.getElementById("bank").innerHTML = "You have " + "$" + accessorySub + " left to spend";
-document.getElementById("buyPhone").onclick = function() { 
-  phonePurchase(); 
-  document.getElementById("phonePurchase").innerHTML = "You've spent " + "$" + phoneCost.toFixed(2) + " on phones.";
-  return; 
-};
-
-document.getElementById("buyAccessory").onclick = function() {
- accessoryPurchase();
- document.getElementById("accessoryPurchase").innerHTML = "You've spent " + "$" + accessoryCost.toFixed(2) + " on accessories"; 
- return;
-};
-
-console.log();
+  // console.log(addSubTotal());
 
 }; //window load end
 
@@ -60,3 +64,6 @@ console.log();
 //     } else { 
 //       console.log("You need more money!");
 //     }
+
+
+    
