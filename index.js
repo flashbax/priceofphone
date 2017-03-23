@@ -11,37 +11,22 @@ window.onload = function() {
 
   const ACCESSORY_COST = 10.00;
   const PHONE_COST = 50.00;
-  const BANK_TALLY = 200.00; 
+  const BANK_THRESHOLD = 200.00; 
   const TAX_RATE = 0.13;
  
-  var phone = document.getElementById("phone").innerHTML = "The cost of a phone is " + "$" + PHONE_COST;
-  var accessory = document.getElementById("accessory").innerHTML = "The cost of an accessory is " + "$" + ACCESSORY_COST;
-  var phoneCost = PHONE_COST;
-  var accessoryCost = ACCESSORY_COST;
-  var bankTally = BANK_TALLY;
-  var taxRate = TAX_RATE;
+  var bank_balance = 300.00;
+  var amount = 0;
 
-  
-  function phonePurchase() {
-    phoneCost+=50;
-    document.getElementById("phonePurchase").innerHTML = "You've spent " + "$" + phoneCost.toFixed(2) + " on phones.";
-    return phoneCost;
+  function phonePurchase(amount) {
+    amount+=50
+    //document.getElementById("phonePurchase").innerHTML = "You've spent " + "$" + amount.toFixed(2) + " on phones.";
+    //return amount;
   };
   
- function accessoryPurchase(){
-    accessoryCost+=10;
-    document.getElementById("accessoryPurchase").innerHTML = "You've spent " + "$" + accessoryCost.toFixed(2) + " on accessories"; 
-    return accessoryCost;
-  };
+ document.getElementById("phonePurchase").onclick = function() { phonePurchase(amount) };
   
-  document.getElementById("phonePurchase").onclick = function() { phonePurchase() };
  
-  document.getElementById("buyAccessory").onclick = function() { accessoryPurchase() };  
 
-var phonePurchaseSubTotal = phonePurchase();
-var accessoryPurchaseSubTotal = accessoryPurchase();
-
-console.log(accessoryPurchaseSubTotal);
   
   // function addSubTotal(){    
   //   var subTotal = phonePurchaseSubTotal+accessoryPurchaseSubTotal;
