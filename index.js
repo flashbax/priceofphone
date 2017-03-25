@@ -1,4 +1,4 @@
-window.onload = function() {
+
     
   //prompt user for purchase 
   //calculate total price of phone (const)
@@ -12,43 +12,25 @@ window.onload = function() {
   const ACCESSORY_COST = 10.00;
   const PHONE_COST = 50.00;
   const BANK_THRESHOLD = 200.00; 
-  const TAX_RATE = 0.13;
+  const TAX_RATE = 0.13;  
  
   var bank_balance = 300.00;
   var amount = 0;
 
-  function phonePurchase(amount) {
-    amount+=50
-    //document.getElementById("phonePurchase").innerHTML = "You've spent " + "$" + amount.toFixed(2) + " on phones.";
-    //return amount;
+  function phone() { 
+      amount += 50;
+      document.getElementById("subTotal").innerHTML = amount;
+      return amount;
   };
-  
- document.getElementById("phonePurchase").onclick = function() { phonePurchase(amount) };
-  
- 
+
+  function accessory() { 
+      amount += 10;
+      document.getElementById("subTotal").innerHTML = amount;
+      return amount;
+  };
 
   
-  // function addSubTotal(){    
-  //   var subTotal = phonePurchaseSubTotal+accessoryPurchaseSubTotal;
-  //   return subTotal;
-  // };
 
-  // console.log(addSubTotal());
-
-}; //window load end
-
-
-//  if (phoneCost <= bankTally) {
-//       document.getElementById("phonePurchase").innerHTML = "You've spent " + "$" + phoneCost.toFixed(2) + " on phones."; 
-//     } else { 
-//       console.log("You need more money!");
-//     }
-
-// if (accessoryCost <= bankTally) {
-//       document.getElementById("accessoryPurchase").innerHTML = "You've spent " + "$" + accessoryCost.toFixed(2) + " on accessories"; 
-//     } else { 
-//       console.log("You need more money!");
-//     }
-
-
-    
+//document.onload = function() {
+  
+//}; //window load end
